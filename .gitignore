@@ -1,0 +1,13 @@
+/.idea
+*.swp
+.DS_Store
+._*
+
+*.tmp
+*.temp
+
+node_modules
+npm-debug.log
+
+/temp
+/output
