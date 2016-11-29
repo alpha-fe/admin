@@ -7,7 +7,7 @@ module.exports = Vue.component('ui-page', {
     template: '<div>{{ message }}<button v-on:click="handleClick">BUTTON</button></div>',
     data(){
       return {
-        message:'这是ES6'
+        message:'这是ES6 按时打 xDDDcfgv发第三方'
       }
     },
     created(){

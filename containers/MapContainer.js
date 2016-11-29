@@ -2,7 +2,7 @@ var Vue = require('vue');
 
 
 module.exports = Vue.component('map-container', {
-    template: '<div> MapContainer </div>',
+    template: '<div> MapContain   dserfff </div>',
     components: {
 
     }

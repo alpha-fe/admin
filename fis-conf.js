@@ -1,13 +1,14 @@
 fis.hook('amd', {
+    mode:'amd',
     paths: {
         vue: '/public/scripts/vue.js',
         vuerouter: '/public/scripts/vue-router.js'
     }
 });
-
-fis.match('*.html', {
-    lint: fis.plugin('html')
-});
+//
+// fis.match('*.html', {
+//     lint: fis.plugin('html')
+// });
 
 fis.match("*.js", {
     parser:fis.plugin('es6-babel',{}),
@@ -54,12 +55,13 @@ fis.match('*.scss', {
     })
 });
 
-fis.match('::packager', {
+fis.match('::package', {
     // npm install [-g] fis3-postpackager-loader
     // 分析 __RESOURCE_MAP__ 结构，来解决资源加载问题
     postpackager: fis.plugin('loader', {
-        // resourceType: 'mod'
-        // useInlineMap: true // 资源映射表内嵌
+        // resourceType: 'amd',
+        // useInlineMap: true,// 资源映射表内嵌
+        allInOne:true
     }),
     // packager: fis.plugin('map'),
     spriter: fis.plugin('csssprites', {
@@ -68,7 +70,7 @@ fis.match('::packager', {
     })
 
 }).match('*.{css,scss}', {
-    packTo: '/pkg/all.css' //css打成一个包
+    packTo: '/static/all.css' //css打成一个包
 });
 
 
