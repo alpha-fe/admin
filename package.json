@@ -6,7 +6,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5"
+    "bootstrap": "^4.0.0-alpha.5",
+    "fis-parser-es6-babel": "^1.0.0"
   },
   "devDependencies": {
     "fis-parser-node-sass": "^0.1.9",

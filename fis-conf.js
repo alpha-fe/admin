@@ -1,8 +1,8 @@
-
 fis.hook('amd', {
-  paths:{
-    vue:'/public/scripts/vue.js'
-  }
+    paths: {
+        vue: '/public/scripts/vue.js',
+        vuerouter: '/public/scripts/vue-router.js'
+    }
 });
 
 fis.match('*.html', {
@@ -16,6 +16,11 @@ fis.match("components/**", {
     release: '/$0'
 });
 
+fis.match("/routes/*.js", {
+    isMod: true,
+    // useMap: true,
+    release: '/$0'
+});
 
 fis.match("/containers/*.js", {
     isMod: true,
@@ -23,22 +28,27 @@ fis.match("/containers/*.js", {
     release: '/$0'
 });
 
+// fis.match('*.es',{
+//   parser:fis.plugin('es6-babel',{}),
+//   rExt:'.js'
+// });
+
 fis.match("pages/**", {
+    parser:fis.plugin('es6-babel',{}),
     isMod: true,
-    // useMap: true,
     release: '/$0'
 });
 
 //component组件资源id支持简写
 fis.match(/^\/components\/component\/(.*)$/i, {
-    id : '$1'
+    id: '$1'
 });
 
 fis.match('*.scss', {
-  rExt: '.css',
-  parser: fis.plugin('node-sass',{
+    rExt: '.css',
+    parser: fis.plugin('node-sass', {
 
-  })
+    })
 });
 
 fis.match('::packager', {
@@ -66,10 +76,10 @@ fis.media('prod')
     .match('**.js', {
         optimizer: fis.plugin('uglify-js')
     })
-    .match('component_modules/*.js',{
+    .match('component_modules/*.js', {
         packTo: '/pkg/common.js'
     })
-    .match('components/**/*.js',{
+    .match('components/**/*.js', {
         packTo: '/pkg/app.js'
     })
     .match('**.css', {

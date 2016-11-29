@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>VUE</title>
-    <link rel="stylesheet" href="./public/styles/bootstrap.css">
     <link rel="stylesheet" href="/pkg/all.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app">
+        <router-view></router-view>
     </div>
-    <script src="../public/scripts/esl.js"></script>
+    <script src="../public/scripts/esl"></script>
     <script>
-       require(['./containers']);
+        require(['./containers/zindex']);
     </script>
-  </body>
+
+</body>
+
 </html>
