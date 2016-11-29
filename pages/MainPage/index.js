@@ -1,6 +1,6 @@
 var Vue = require('vue');
 module.exports = Vue.component('main-page', {
-    template: __inline('./MainPage.html'),
+    template: __inline('./index.html'),
     methods:{
 
     },

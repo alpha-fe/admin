@@ -1,6 +1,6 @@
 var Vue = require('vue');
 module.exports = Vue.component('left-nav-page', {
-    template: __inline('./LeftNavPage.html'),
+    template: __inline('./index.html'),
     methods:{
 
     },

@@ -2,7 +2,8 @@ fis.hook('amd', {
     mode:'amd',
     paths: {
         vue: '/public/scripts/vue.js',
-        vuerouter: '/public/scripts/vue-router.js'
+        vuerouter: '/public/scripts/vue-router.js',
+        vuex:'/public/scripts/vuex.js'
     }
 });
 //
@@ -78,16 +79,44 @@ fis.match('*.{css,scss}', {
 
 //生产环境下CSS、JS压缩合并
 //使用方法 fis3 release prod
-fis.media('prod')
-    .match('**.js', {
-        optimizer: fis.plugin('uglify-js')
-    })
-    .match('containers/*.js', {
-        packTo: '/pkg/common.js'
-    })
-    .match('components/**/*.js', {
-        packTo: '/pkg/app.js'
-    })
-    .match('**.css', {
-        optimizer: fis.plugin('clean-css')
-    });
+// fis.media('prod')
+//     .match('**.js', {
+//         optimizer: fis.plugin('uglify-js')
+//     })
+//     .match('containers/*.js', {
+//         packTo: '/static/common.js'
+//     })
+//     .match('components/**/*.js', {
+//         packTo: '/static/app.js'
+//     })
+//     .match('**.css', {
+//         optimizer: fis.plugin('clean-css')
+//     });
+//
+// // 测试
+//
+//     fis.media('prod').match('*.{less,scss,css,js}', {
+//         useHash: true
+//     });
+//
+//     fis.media('prod').match('::image', {
+//         useHash: true
+//     });
+//
+//     fis.media('prod').match('*.{less,css,html:css}', {
+//         useSprite: true,
+//         optimizer: fis.plugin('clean-css')
+//     });
+//
+//     fis.media('prod').match('*.png', {
+//         optimizer: fis.plugin('png-compressor')
+//     });
+//
+//     fis.media('prod').match('*.js', {
+//         optimizer: fis.plugin('uglify-js', {
+//             mangle: {
+//                 except: 'exports, module, require, define'
+//             }
+//         }),
+//         // packTo:'/dev/all.js'字体
+//     });

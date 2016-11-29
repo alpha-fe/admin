@@ -3,9 +3,9 @@
     // var HeaderContainer = require('./HeaderContainer');
     // var BodyContainer = require('./BodyContainer')
 
-    var HeaderContainer = require('../pages/HeaderPage/HeaderPage');
-    var LeftNav = require('../pages/LeftNavPage/LeftNavPage');
-    var MainContainer = require('../pages/MainPage/MainPage');
+    var HeaderContainer = require('../pages/HeaderPage');
+    var LeftNav = require('../pages/LeftNavPage');
+    var MainContainer = require('../pages/MainPage');
 
 
     module.exports = Vue.component('app-container', {
