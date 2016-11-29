@@ -69,7 +69,8 @@ fis.match('::package', {
         margin: '15'
     })
 
-}).match('*.{css,scss}', {
+});
+fis.match('*.{css,scss}', {
     packTo: '/static/all.css' //css打成一个包
 });
 
@@ -81,7 +82,7 @@ fis.media('prod')
     .match('**.js', {
         optimizer: fis.plugin('uglify-js')
     })
-    .match('component_modules/*.js', {
+    .match('containers/*.js', {
         packTo: '/pkg/common.js'
     })
     .match('components/**/*.js', {
