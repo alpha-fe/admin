@@ -1,14 +1,16 @@
 {
-    "name": "admin",
-    "version": "0.0.1",
-    "description": "VUE2 WITH FIS3",
-    "author": "YIPAI-FE",
-    "main": "index.js",
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
-        "fis-parser-node-sass": "^0.1.9",
-        "fis3-hook-amd": "^0.2.0",
-        "fis3-postpackager-loader": "^2.1.4"
-    }
+  "name": "admin",
+  "version": "0.0.1",
+  "description": "VUE2 WITH FIS3",
+  "author": "YIPAI-FE",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "fis-parser-node-sass": "^0.1.9",
+    "fis3-hook-amd": "^0.2.0",
+    "fis3-postpackager-loader": "^2.1.4"
+  }
 }

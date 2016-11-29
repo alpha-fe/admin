@@ -1,6 +1,6 @@
     var Vue = require('vue');
-    module.exports = Vue.component('NavBar', {
-        template: __inline('./NavBar.html'),
+    module.exports = Vue.component('header-page', {
+        template: __inline('./HeaderPage.html'),
         methods:{
 
         },
@@ -8,6 +8,6 @@
 
         },
         computed:{
-          
+
         }
     });
