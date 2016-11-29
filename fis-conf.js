@@ -9,6 +9,11 @@ fis.match('*.html', {
     lint: fis.plugin('html')
 });
 
+fis.match("*.js", {
+    parser:fis.plugin('es6-babel',{}),
+    release: '/$0'
+});
+
 
 //components下面的所有js资源都是组件化资源
 fis.match("components/**", {
@@ -28,16 +33,14 @@ fis.match("/containers/*.js", {
     release: '/$0'
 });
 
-// fis.match('*.es',{
-//   parser:fis.plugin('es6-babel',{}),
-//   rExt:'.js'
-// });
 
 fis.match("pages/**", {
-    parser:fis.plugin('es6-babel',{}),
     isMod: true,
     release: '/$0'
 });
+
+
+
 
 //component组件资源id支持简写
 fis.match(/^\/components\/component\/(.*)$/i, {
