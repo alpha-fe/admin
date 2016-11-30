@@ -1,15 +1,14 @@
 fis.hook('amd', {
     mode:'amd',
+    globalAsyncAsSync: true,
     paths: {
         vue: '/public/scripts/vue.js',
         vuerouter: '/public/scripts/vue-router.js',
-        vuex:'/public/scripts/vuex.js'
+        vuex:'/public/scripts/vuex.js',
+        axios:'/public/scripts/axios.js'
     }
 });
-//
-// fis.match('*.html', {
-//     lint: fis.plugin('html')
-// });
+
 
 fis.match("*.js", {
     parser:fis.plugin('es6-babel',{}),
@@ -41,7 +40,10 @@ fis.match("pages/**", {
     release: '/$0'
 });
 
-
+// 本地模拟数据
+fis.match('server.conf', {
+    release: '/config/server.conf'
+});
 
 
 //component组件资源id支持简写
@@ -55,6 +57,14 @@ fis.match('*.scss', {
 
     })
 });
+
+
+// fis.match('::package', {
+//     postpackager: fis.plugin('loader', {
+//         resourceType: 'amd',
+//         useInlineMap: true
+//     })
+// });
 
 fis.match('::package', {
     // npm install [-g] fis3-postpackager-loader
@@ -75,6 +85,18 @@ fis.match('*.{css,scss}', {
     packTo: '/static/all.css' //css打成一个包
 });
 
+
+fis.media('prod').match('*.{less,scss,css,js}', {
+    useHash: true
+});
+
+fis.media('prod').match('*.js', {
+    optimizer: fis.plugin('uglify-js', {
+        mangle: {
+            except: 'exports, module, require, define'
+        }
+    })
+});
 
 
 //生产环境下CSS、JS压缩合并
