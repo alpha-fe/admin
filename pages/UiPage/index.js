@@ -1,6 +1,6 @@
 // var Vue = require('vue');
 import Vue from 'vue';
-import axios from 'axios';
+import api from 'api';
 const getUi = (txt) => {
     return txt * 2;
 };
@@ -13,29 +13,56 @@ module.exports = Vue.component('ui-page', {
         }
     },
     created() {
-      var self = this;
-      if(cacheMessage){
-        this.message = cacheMessage;
-        return;
-      }
+        var self = this;
+        if (cacheMessage) {
+            this.message = cacheMessage;
+            return;
+        }
+        api({
+          method:'get',
+          url:'/api/user',
+          data:{
+            id:11111
+          },
+          success:function(res){
+            console.log('222222');
+          },
+          error:function(res){
+            console.log('error');
+          }
+        })
+        // axios({
+        //     method: 'get',
+        //     url: '/api/user',
+        //     data: {
+        //         firstName: 'Fred',
+        //         lastName: 'Flintstone'
+        //     }
+        // }).then(function(res){
+        //   self.message = res.data.a;
+        //   console.log(res);
+        // }).catch(function(error){
+        //   console.log(222);
+        //   console.log(error);
+        // });
 
-        axios.get('/api/user', {
-                params: {
-                    id: 12345
-                }
-            })
-            .then(function(response) {
-                console.log(response);
-                self.message = response.data.a;
-                cacheMessage = self.message;
-
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
+        // axios.get('/api/user', {
+        //         params: {
+        //             id: 12345
+        //         }
+        //     })
+        //     .then(function(response) {
+        //         console.log(response);
+        //         self.message = response.data.a;
+        //         cacheMessage = self.message;
+        //
+        //     })
+        //     .catch(function(error) {
+        //         console.log(error);
+        //     });
     },
-    beforeMount(){
-      console.log(222);
+    beforeMount() {
+        console.log(222);
     },
     methods: {
         handleClick() {

@@ -5,7 +5,8 @@ fis.hook('amd', {
         vue: '/public/scripts/vue.js',
         vuerouter: '/public/scripts/vue-router.js',
         vuex:'/public/scripts/vuex.js',
-        axios:'/public/scripts/axios.js'
+        axios:'/public/scripts/axios.js',
+        api:'/util/api.js'
     }
 });
 
@@ -36,6 +37,11 @@ fis.match("/containers/*.js", {
 
 
 fis.match("pages/**", {
+    isMod: true,
+    release: '/$0'
+});
+
+fis.match("util/**", {
     isMod: true,
     release: '/$0'
 });
