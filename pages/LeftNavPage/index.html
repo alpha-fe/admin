@@ -1,4 +1,4 @@
-<div class="col-xs-2">
+<!-- <div class="col-xs-2">
     <ul class="nav">
         <li class="nav-item">
             <router-link class="nav-link active" to="chart">Chart</router-link>
@@ -13,4 +13,26 @@
           <router-link class="nav-link" to="table">Table</router-link>
         </li>
     </ul>
-</div>
+</div> -->
+<el-col :span="3">
+    <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" :router=true @close="handleClose" theme="dark">
+        <el-submenu index="1">
+            <template slot="title">导航一</template>
+            <el-menu-item-group title="分组一">
+                <el-menu-item index="1-1" :route="{ path: 'map' }">map</el-menu-item>
+                <el-menu-item index="1-2" :route="{ path: 'ui' }">ui</el-menu-item>
+                <el-menu-item index="1-2" :route="{ path: 'table' }">table</el-menu-item>
+                <el-menu-item index="1-2" :route="{ path: 'chart' }">chart</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="分组2">
+                <el-menu-item index="2-1" :route="{path:'chart'}">chart</el-menu-item>
+            </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="2">
+          <template slot="title">导航二</template>
+        </el-submenu>
+        <el-submenu index="3">
+          <template slot="title">导航二</template>
+        </el-submenu>
+    </el-menu>
+</el-col>

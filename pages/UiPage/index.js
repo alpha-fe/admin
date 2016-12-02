@@ -14,6 +14,7 @@ module.exports = Vue.component('ui-page', {
     },
     created() {
         var self = this;
+        console.log('created');
         // if (cacheMessage) {
         //     this.message = cacheMessage;
         //     return;
@@ -26,6 +27,7 @@ module.exports = Vue.component('ui-page', {
           },
           success:function(res){
             console.log('222222');
+            self.message = res.data.a;
           },
           error:function(res){
             console.log('error');

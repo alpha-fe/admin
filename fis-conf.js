@@ -1,12 +1,13 @@
 fis.hook('amd', {
     mode:'amd',
-    // globalAsyncAsSync: true,
+    globalAsyncAsSync: true,
     paths: {
         vue: '/public/scripts/vue.js',
         vuerouter: '/public/scripts/vue-router.js',
         vuex:'/public/scripts/vuex.js',
         axios:'/public/scripts/axios.js',
-        api:'/util/api.js'
+        api:'/util/api.js',
+        element:'/public/scripts/element.js'
     }
 });
 

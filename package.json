@@ -5,9 +5,17 @@
   "author": "YIPAI-FE",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "fis3 server start",
+    "redev": "fis3 server start -p 3000",
+    "clean": "fis3 server clean",
+    "r": "fis3 release -wL",
+    "stop": "fis3 server stop"
+  },
   "dependencies": {
     "axios": "^0.15.3",
-    "bootstrap": "^4.0.0-alpha.5"
+    "bootstrap": "^4.0.0-alpha.5",
+    "element-ui": "^1.0.3"
   },
   "devDependencies": {
     "fis-parser-es6-babel": "^1.0.0",

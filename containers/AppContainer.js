@@ -9,7 +9,7 @@
 
 
     module.exports = Vue.component('app-container', {
-        template: '<div><HeaderContainer/><LeftNav/><MainContainer/></div>',
+        template: '<div><HeaderContainer/><el-row :span="24"><LeftNav/><MainContainer/></el-row></div>',
         components: {
             HeaderContainer: HeaderContainer,
             LeftNav: LeftNav,
