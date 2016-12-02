@@ -9,20 +9,6 @@
     Vue.use(Vuex);
 
     Vue.use(Element);
-    // var store = new Vuex.store({
-    //   state:{
-    //     a:1,
-    //     b:2
-    //   },
-    //   mutations:{
-    //     a:function(){
-    //
-    //     },
-    //     b:function(){
-    //
-    //     }
-    //   }
-    // });
 
     var router = new VueRouter({
         routes: routes,
