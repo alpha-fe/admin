@@ -1,10 +1,10 @@
 // var Vue = require('vue');
 import Vue from 'vue';
-import api from 'api';
+import util from 'api';
 const getUi = (txt) => {
     return txt * 2;
 };
-let cacheMessage = '';
+let api = util.api;
 module.exports = Vue.component('ui-page', {
     template: '<div>{{ message }}<br/><a href="/#/chart">这是一个链接</a><button v-on:click="handleClick">BUTTON</button></div>',
     data() {
@@ -14,10 +14,10 @@ module.exports = Vue.component('ui-page', {
     },
     created() {
         var self = this;
-        if (cacheMessage) {
-            this.message = cacheMessage;
-            return;
-        }
+        // if (cacheMessage) {
+        //     this.message = cacheMessage;
+        //     return;
+        // }
         api({
           method:'get',
           url:'/api/user',

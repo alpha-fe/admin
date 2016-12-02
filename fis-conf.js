@@ -1,6 +1,6 @@
 fis.hook('amd', {
     mode:'amd',
-    globalAsyncAsSync: true,
+    // globalAsyncAsSync: true,
     paths: {
         vue: '/public/scripts/vue.js',
         vuerouter: '/public/scripts/vue-router.js',
